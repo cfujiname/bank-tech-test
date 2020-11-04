@@ -19,5 +19,13 @@ describe Transactions do
     end
   end
 
+  describe '#withdraw' do
+    it 'allows user to withdraw from account' do
+      transactions.deposit(1000)
+      transactions.withdraw(500)
+      expect(transactions.balance).to eq 500
+    end
+  end
+
   
 end

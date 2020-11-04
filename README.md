@@ -35,11 +35,11 @@ Class Transactions
   - has _deposit_ method
   - has _withdrawal_ method
   - has a _list of transactions_
-  - has dates of each transaction
+  - has _dates_ of each transaction
 
 Class PrintStatement
-  - has the _history of transactions_ to print (depends on Transactions class)
-  - _prints_ the history of transactions
+  - has the _list of transactions_ to print (depends on Transactions class)
+  - _prints_ the list of transactions
 
 
 

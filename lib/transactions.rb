@@ -12,7 +12,17 @@ class Transactions
     increase_balance(amount)
   end
 
+  def withdraw(amount)
+    decrease_balance(amount)
+  end
+
+private
+
   def increase_balance(amount)
     @balance += amount
+  end
+
+  def decrease_balance(amount)
+    @balance -= amount
   end
 end
