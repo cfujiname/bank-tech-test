@@ -7,6 +7,10 @@ describe Transactions do
     it 'should have a default balance of 0' do
       expect(transactions.balance).to eq 0
     end
+
+    it 'should have a list of transactions' do
+      expect(transactions.list_of_transactions).to be_an(Array)
+    end
   end
 
   describe '#deposit' do
@@ -14,4 +18,6 @@ describe Transactions do
       expect(transactions.deposit(1000)).to eq 1000
     end
   end
+
+  
 end
