@@ -13,6 +13,8 @@ class Transactions
   end
 
   def withdraw(amount)
+    raise 'No funds available' if @balance < amount
+
     decrease_balance(amount)
   end
 

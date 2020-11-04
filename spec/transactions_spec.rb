@@ -25,6 +25,10 @@ describe Transactions do
       transactions.withdraw(500)
       expect(transactions.balance).to eq 500
     end
+
+    it 'raises an error withdraw amount is more than balance amount' do
+      expect { transactions.withdraw(1000) }.to raise_error 'No funds available'
+    end
   end
 
   

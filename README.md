@@ -33,7 +33,7 @@ Class Bank Account    <<  Transaction (deposit/withdrawal)
 Class Transactions
   - should have a _default balance_ of 0
   - has _deposit_ method
-  - has _withdrawal_ method
+  - has _withdrawal_ method (user should not be allowed to withdraw more than balace permits - edge case)
   - has a _list of transactions_
   - has _dates_ of each transaction
 
