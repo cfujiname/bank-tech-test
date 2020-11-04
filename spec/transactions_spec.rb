@@ -3,6 +3,16 @@ require 'transactions'
 describe Transactions do
   subject(:transactions) { Transactions.new }
 
+  let(:transaction_1) do
+    { date: Date, credit: '1000.00', debit: '--', balance: '1000.00' }
+  end
+
+  let(:transaction_2) do
+    { date: Date, credit: '--', debit: '500.00', balance: '500.00' }
+  end
+
+  Date = Time.now.strftime('%d/%m/%y')
+
   describe '#initialize' do
     it 'should have a default balance of 0' do
       expect(transactions.balance).to eq 0
@@ -15,7 +25,8 @@ describe Transactions do
 
   describe '#deposit' do
     it 'allows user to deposit into account' do
-      expect(transactions.deposit(1000)).to eq 1000
+      transactions.deposit(1000)
+      expect(transactions.balance).to eq 1000
     end
   end
 
@@ -31,5 +42,16 @@ describe Transactions do
     end
   end
 
-  
+  describe 'list_of_transactions' do
+    it 'contains each transaction' do
+      transactions.deposit(1000)
+      expect(transactions.list_of_transactions).to include(transaction_1)
+    end
+    it 'contains many transactions' do
+      transactions.deposit(1000)
+      transactions.withdraw(500)
+      expect(transactions.list_of_transactions).to include(transaction_1, transaction_2)
+    end
+  end
+
 end
