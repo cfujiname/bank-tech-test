@@ -8,5 +8,10 @@ describe Transactions do
       expect(transactions.balance).to eq 0
     end
   end
-  
+
+  describe '#deposit' do
+    it 'allows user to deposit into account' do
+      expect(transactions.deposit(1000)).to eq 1000
+    end
+  end
 end

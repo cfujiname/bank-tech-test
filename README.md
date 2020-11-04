@@ -31,15 +31,15 @@ Class Bank Account    <<  Transaction (deposit/withdrawal)
   - orchestrates the methods from Transactions and PrintStatement
 
 Class Transactions
-  - should have a default balance of 0
-  - has deposit method
-  - has withdrawal method
-  - has a list of transactions
+  - should have a _default balance_ of 0
+  - has _deposit_ method
+  - has _withdrawal_ method
+  - has a _list of transactions_
   - has dates of each transaction
 
 Class PrintStatement
-  - has the history of transactions to print (depends on Transactions class)
-  - prints the history of transactions
+  - has the _history of transactions_ to print (depends on Transactions class)
+  - _prints_ the history of transactions
 
 
 
