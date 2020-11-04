@@ -4,11 +4,11 @@ describe Transactions do
   subject(:transactions) { Transactions.new }
 
   let(:transaction_1) do
-    { date: Date, credit: '1000.00', debit: '--', balance: '1000.00' }
+    { date: Date, credit: '1000.00', debit: '-----', balance: '1000.00' }
   end
 
   let(:transaction_2) do
-    { date: Date, credit: '--', debit: '500.00', balance: '500.00' }
+    { date: Date, credit: '-----', debit: '500.00', balance: '500.00' }
   end
 
   Date = Time.now.strftime('%d/%m/%y')

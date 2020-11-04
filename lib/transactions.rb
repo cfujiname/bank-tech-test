@@ -13,7 +13,7 @@ class Transactions
     transaction_1 = {
       date: Time.now.strftime('%d/%m/%y'),
       credit: format('%.2f', amount),
-      debit: '--',
+      debit: '-----',
       balance: format('%.2f', @balance)
     }
     @list_of_transactions.push(transaction_1)
@@ -25,7 +25,7 @@ class Transactions
     decrease_balance(amount)
     transaction_2 = {
       date: Time.now.strftime('%d/%m/%y'),
-      credit: '--',
+      credit: '-----',
       debit: format('%.2f', amount),
       balance: format('%.2f', @balance)
     }
