@@ -9,6 +9,10 @@ class Transactions
   end
 
   def deposit(amount)
-    1000
+    increase_balance(amount)
+  end
+
+  def increase_balance(amount)
+    @balance += amount
   end
 end
