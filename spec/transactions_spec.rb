@@ -3,11 +3,11 @@ require 'transactions'
 describe Transactions do
   subject(:transactions) { Transactions.new }
 
-  let(:transaction_1) do
+  let(:transaction1) do
     { date: Date, credit: '1000.00', debit: '-----', balance: '1000.00' }
   end
 
-  let(:transaction_2) do
+  let(:transaction2) do
     { date: Date, credit: '-----', debit: '500.00', balance: '500.00' }
   end
 
@@ -45,13 +45,12 @@ describe Transactions do
   describe 'list_of_transactions' do
     it 'contains each transaction' do
       transactions.deposit(1000)
-      expect(transactions.list_of_transactions).to include(transaction_1)
+      expect(transactions.list_of_transactions).to include(transaction1)
     end
     it 'contains many transactions' do
       transactions.deposit(1000)
       transactions.withdraw(500)
-      expect(transactions.list_of_transactions).to include(transaction_1, transaction_2)
+      expect(transactions.list_of_transactions).to include(transaction1, transaction2)
     end
   end
-
 end
