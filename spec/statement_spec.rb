@@ -3,7 +3,7 @@ require 'statement'
 describe Statement do
   let(:statement) { Statement.new }
   let(:list_of_transactions) do
-    [{ date: '04/11/20',
+    [{ date: '03/11/20',
        credit: format('%.2f', 1000),
        debit: '-----',
        balance: format('%.2f', 1000) },
@@ -17,7 +17,7 @@ describe Statement do
     let(:print_statement) do
       " Date     ||  Credit  ||  Debit  ||  Balance\n" \
       " 04/11/20 ||  -----  ||  500.00  ||  500.00\n" \
-      " 04/11/20 ||  1000.00  ||  -----  ||  1000.00\n"
+      " 03/11/20 ||  1000.00  ||  -----  ||  1000.00\n"
     end
 
     it 'prints the list of transactions as per acceptance criteria' do

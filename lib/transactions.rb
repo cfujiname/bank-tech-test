@@ -10,29 +10,37 @@ class Transactions
 
   def deposit(amount)
     increase_balance(amount)
-    transaction1 = {
-      date: Time.now.strftime('%d/%m/%y'),
-      credit: format('%.2f', amount),
-      debit: '-----',
-      balance: format('%.2f', @balance)
-    }
-    @list_of_transactions.push(transaction1)
+    display_deposit(amount)
   end
 
   def withdraw(amount)
     raise 'No funds available' if @balance < amount
 
     decrease_balance(amount)
-    transaction2 = {
+    display_withdrawal(amount)
+  end
+
+  private
+
+  def display_deposit(amount)
+    transaction = {
+      date: Time.now.strftime('%d/%m/%y'),
+      credit: format('%.2f', amount),
+      debit: '-----',
+      balance: format('%.2f', @balance)
+    }
+    @list_of_transactions.push(transaction)
+  end
+
+  def display_withdrawal(amount)
+    transaction = {
       date: Time.now.strftime('%d/%m/%y'),
       credit: '-----',
       debit: format('%.2f', amount),
       balance: format('%.2f', @balance)
     }
-    @list_of_transactions.push(transaction2)
+    @list_of_transactions.push(transaction)
   end
-
-  private
 
   def increase_balance(amount)
     @balance += amount

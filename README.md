@@ -4,7 +4,6 @@ Practice OO and TDD
 
 ## Acceptance Criteria
 
-
 Given a client makes a _deposit_ of 1000 on 10-01-2012
 And a deposit of 2000 on 13-01-2012
 And a _withdrawal_ of 500 on 14-01-2012
@@ -26,19 +25,23 @@ date       || credit  || debit  || balance
 - Printing statement (sub class) contains history of transactions
 - All transactions contain date
 
-Class Bank Account    <<  Transaction (deposit/withdrawal) 
-                      <<  Print Statement
+## Class Bank Account    
+<<  Transaction (deposit/withdrawal) 
+<<  Print Statement
 
   - orchestrates the methods from Transactions and PrintStatement
+  - has transactions on itself
+  - can call the methods _deposit_ and _withdraw_
+  - can print statements
 
-Class Transactions
+## Class Transactions
   - should have a _default balance_ of 0
   - has _deposit_ method
   - has _withdrawal_ method (user should not be allowed to withdraw more than balace permits - edge case)
   - has a _list of transactions_
   - has _dates_ of each transaction
 
-Class PrintStatement
+## Class PrintStatement
   - has the _list of transactions_ to print (depends on Transactions class)
   - _prints_ the list of transactions
 
