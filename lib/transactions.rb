@@ -9,18 +9,26 @@ class Transactions
   end
 
   def deposit(amount)
-    increase_balance(amount)
+    credit_balance(amount)
     display_deposit(amount)
   end
 
   def withdraw(amount)
     raise 'No funds available' if @balance < amount
 
-    decrease_balance(amount)
+    debit_balance(amount)
     display_withdrawal(amount)
   end
 
   private
+
+  def credit_balance(amount)
+    @balance += amount
+  end
+
+  def debit_balance(amount)
+    @balance -= amount
+  end
 
   def display_deposit(amount)
     transaction = {
@@ -40,13 +48,5 @@ class Transactions
       balance: format('%.2f', @balance)
     }
     @list_of_transactions.push(transaction)
-  end
-
-  def increase_balance(amount)
-    @balance += amount
-  end
-
-  def decrease_balance(amount)
-    @balance -= amount
   end
 end
