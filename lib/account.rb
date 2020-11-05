@@ -7,5 +7,8 @@ class Account
   def initialize(transactions)
     @transactions = transactions
   end 
-  
+
+  def deposit(amount)
+    transactions.deposit(amount)
+  end
 end

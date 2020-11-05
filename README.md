@@ -50,7 +50,7 @@ date       || credit  || debit  || balance
 <<  Statement
 
   - orchestrates the methods from Transactions and Statement
-  - has transactions on itself
+  - has transactions on itself (initialised)
   - can call the methods _deposit_ and _withdraw_
   - can print statements
 
